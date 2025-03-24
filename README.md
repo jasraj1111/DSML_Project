@@ -111,6 +111,13 @@ Where:
 📊 **3. Price Elasticity Alignment (PED Impact Score Distribution)**  
 📊 **4. Exploration vs. Exploitation: Price Change Distribution**  
 
+![output](https://github.com/user-attachments/assets/6e8722f6-63c6-4ecf-945f-f894623b83ad)
+![Figure_1](https://github.com/user-attachments/assets/7d1c482f-d31f-4827-be89-fffcca9d862e)
+![Figure_2](https://github.com/user-attachments/assets/de806cb1-498c-447e-934e-3955a3627b01)
+![Figure_3](https://github.com/user-attachments/assets/026abde7-55ec-405e-85c2-1cb04b48be50)
+![Figure_4](https://github.com/user-attachments/assets/e0e6c79b-40d4-4d64-a225-48648828d7b0)
+
+
 ---
 
 ## 🚀 **Conclusion & Future Work**  
