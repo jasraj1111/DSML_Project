@@ -1,6 +1,5 @@
 # 🚀 Dynamic Pricing Using Reinforcement Learning for Blinkit  
 
-![Banner](https://github.com/user-attachments/assets/026abde7-55ec-405e-85c2-1cb04b48be50)
 
 > 🔍 **Author:** [Jasraj Shendge](https://www.linkedin.com/in/jasrajshendge)  
 > 🎓 **Institution:** Manipal University Jaipur  
