@@ -1,182 +1,160 @@
-# 🚀 **Dynamic Pricing Using Reinforcement Learning for Blinkit**  
+# 🚀 Dynamic Pricing Using Reinforcement Learning for Blinkit  
 
-📌 **Author:** Jasraj Shendge  
-📌 **Institution:** Manipal University Jaipur  
+![Banner](https://github.com/user-attachments/assets/026abde7-55ec-405e-85c2-1cb04b48be50)
 
-## 📖 **Introduction**  
-
-### **Problem Statement**  
-Blinkit, a fast-growing **online grocery delivery platform**, faces challenges in **optimizing pricing strategies** to maximize revenue, sales, and customer satisfaction. Unlike static pricing, **dynamic pricing** adapts based on real-time demand, seasonality, and competition.  
-
-### **Business Goals**  
-✅ **Identify the optimal pricing strategy** to maximize revenue and profit.  
-✅ **Understand price elasticity** and how customers respond to pricing changes.  
-✅ **Implement dynamic pricing** that adjusts in **real-time**.  
+> 🔍 **Author:** [Jasraj Shendge](https://www.linkedin.com/in/jasrajshendge)  
+> 🎓 **Institution:** Manipal University Jaipur  
+> 📅 **Academic Year:** 2024–2025
 
 ---
 
-## 🎯 **Project Contributions**  
+## 📖 Overview
 
-✔️ **Incorporating Price Elasticity of Demand (PED) for Smarter Pricing**  
-✔️ **Developing a Reinforcement Learning (RL) Model for Dynamic Pricing**  
-✔️ **Visualizing & Evaluating Revenue, Profitability, and PED Alignment**  
+This project implements a **Dynamic Pricing Strategy** for Blinkit using **Reinforcement Learning (RL)** and **Price Elasticity of Demand (PED)**. Unlike static pricing, dynamic pricing allows businesses to **adjust prices based on real-time demand, consumer behavior, and market conditions**.
+
+We explore two RL algorithms — **Q-Learning** and **Deep Q-Network (DQN)** — and compare their effectiveness in optimizing pricing strategies.
 
 ---
 
-## 📊 **Dataset Description & Visualization**  
+## 🎯 Objectives
 
-The dataset contains essential pricing and sales data:  
+- ✅ Predict and understand **Price Elasticity of Demand** (PED)  
+- ✅ Implement **Q-Learning** and **DQN** for dynamic pricing  
+- ✅ Maximize **revenue** and **profit margin** through smart decisions  
+- ✅ Perform comparative analysis between RL techniques  
+- ✅ Visualize and interpret the impact of price changes  
 
-| **Column Name**      | **Description**  |
-|----------------------|----------------|
-| `Item_Identifier`    | Unique product ID |
-| `Item_Type`         | Product category |
-| `Item_MRP`          | Maximum Retail Price |
+---
+
+## 📊 Dataset Overview
+
+The dataset is sourced from a grocery sales environment and contains the following key columns:
+
+| Column | Description |
+|--------|-------------|
+| `Item_Identifier` | Unique product ID |
+| `Item_Type` | Category of product |
+| `Item_MRP` | Maximum Retail Price |
 | `Item_Outlet_Sales` | Total sales generated |
-| `Outlet_Location_Type` | Store location type (Urban/Rural) |
-| `Outlet_Type`       | Type of store |
+| `Outlet_Location_Type` | Urban/Rural classification |
+| `Outlet_Type` | Store type (Supermarket, Grocery, etc.) |
 
-### 📌 **Data Insights**  
-- 📉 **Price vs. Sales Relationship:** Scatter plot showing sales variation with price changes.  
-- 📊 **Distribution of Price Elasticity of Demand (PED):** Identifies elastic & inelastic products.  
-
----
-
-## 🧠 **Algorithm Used: Q-Learning for Dynamic Pricing**  
-
-Q-learning is a **reinforcement learning algorithm** that helps the agent learn **optimal pricing strategies** by interacting with the environment.  
-
-### 🔢 **Q-Learning Formula**  
-
-\[
-Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max Q(s', a') - Q(s, a) \right]
-\]
-
-Where:  
-- \( Q(s, a) \) = Value of taking action \( a \) in state \( s \).  
-- \( \alpha \) = Learning rate.  
-- \( r \) = Reward (profit/revenue from pricing decision).  
-- \( \gamma \) = Discount factor.  
-- \( \max Q(s', a') \) = Best Q-value for the next state \( s' \).  
-
-### 📌 **Flowchart of the RL Model**  
-🔹 **Input Data** (MRP, Sales, PED, Demand Trends)  
-🔹 **Agent Observes Price & PED**  
-🔹 **Agent Decides Pricing Action (Increase, Maintain, Decrease)**  
-🔹 **Revenue & Demand Feedback Collected**  
-🔹 **Q-Table Updated Based on Reward**  
-🔹 **Agent Learns & Optimizes Pricing**  
+**Visualizations Included:**
+- 📉 Price vs Sales Scatter Plot  
+- 📊 PED Distribution Histogram  
+- 📈 RL Reward Convergence  
+- 📊 Exploration vs Exploitation Trend  
+- 📊 Revenue & Profit Comparison Charts  
 
 ---
 
-## ⚙️ **Hyperparameters & Training Process**  
+## 🧠 Machine Learning Techniques
 
-| **Hyperparameter** | **Value Used** |
-|-------------------|--------------|
-| Learning Rate \( \alpha \) | 0.1 |
-| Discount Factor \( \gamma \) | 0.9 |
-| Exploration Rate \( \epsilon \) | Starts at 1.0, decays to 0.01 |
-| Number of Episodes | 1000 |
+### 📌 Step 1: PED Calculation using Regression
 
-### 📊 **Training Visualization**  
+We evaluated **Random Forest**, **XGBoost**, and **Linear Regression** models. Based on R² scores, **XGBoost** was selected for PED estimation.
 
-📈 **1. Reward Convergence Over Time**  
-📊 **2. Exploration vs. Exploitation Trade-off**  
+- PED was calculated by simulating a ±5% price change and recording the variation in predicted sales.
+- Final PED scores were used to categorize items as elastic or inelastic.
 
----
+### 📌 Step 2: Reinforcement Learning Models
 
-## 📊 **Experimental Results & Evaluation**  
-
-### ✅ **Key Metrics Used**  
-
-| **Metric** | **Description** |
-|------------|----------------|
-| **Revenue Improvement (%)** | Change in revenue due to RL pricing |
-| **Profit Margin Impact (%)** | Impact on overall profitability |
-| **PED Alignment (%)** | How well the RL model aligns with PED analysis |
-| **Exploration vs. Exploitation Balance** | Evaluates whether the RL agent is too aggressive or conservative |
-
-### ✅ **Evaluation Results**  
-
-| **Item Type** | **Old Price** | **New Price (RL)** | **Revenue Change (%)** | **Profit Margin Change (%)** |
-|--------------|--------------|---------------------|----------------------|---------------------------|
-| Dairy       | 50           | 55                  | +8.5%                 | +6.3%                      |
-| Snacks      | 30           | 27                  | -3.2%                 | +1.5%                      |
-| Beverages   | 20           | 22                  | +5.1%                 | +4.8%                      |
-
-### 📊 **Result Visualizations**  
-
-📉 **1. Revenue Improvement (%) by Item Type**  
-📈 **2. Profit Margin Impact (%) by Item Type**  
-📊 **3. Price Elasticity Alignment (PED Impact Score Distribution)**  
-📊 **4. Exploration vs. Exploitation: Price Change Distribution**  
-
-![output](https://github.com/user-attachments/assets/6e8722f6-63c6-4ecf-945f-f894623b83ad)
-![Figure_1](https://github.com/user-attachments/assets/7d1c482f-d31f-4827-be89-fffcca9d862e)
-![Figure_2](https://github.com/user-attachments/assets/de806cb1-498c-447e-934e-3955a3627b01)
-![Figure_3](https://github.com/user-attachments/assets/026abde7-55ec-405e-85c2-1cb04b48be50)
-![Figure_4](https://github.com/user-attachments/assets/e0e6c79b-40d4-4d64-a225-48648828d7b0)
-
+| Model | Description |
+|-------|-------------|
+| **Q-Learning** | Tabular model, easy to interpret |
+| **Deep Q-Network (DQN)** | Neural network-based, supports large state-action spaces |
 
 ---
 
-## 🚀 **Conclusion & Future Work**  
+## ⚙️ Training Configurations
 
-### 📌 **Conclusion**  
-This project successfully demonstrates **Reinforcement Learning-based Dynamic Pricing**, integrating **PED insights** into pricing decisions. The **Q-Learning algorithm** optimally adjusts prices to **maximize revenue and profit**.  
+| Hyperparameter | Value |
+|----------------|-------|
+| Learning Rate (α) | 0.1 |
+| Discount Factor (γ) | 0.9 |
+| Exploration Rate (ε) | Decays from 1.0 to 0.01 |
+| Episodes | 1000 |
 
-### 🔮 **Future Enhancements**  
-✔️ **Testing on Real-World E-Commerce Data**  
-✔️ **Using Deep Q-Learning for Improved Decision-Making**  
-✔️ **Integrating Seasonal & Competitor Pricing Factors**  
-
----
-
-## 📁 **Project Structure**  
-
-```
-📂 dynamic-pricing-rl  
-│── 📜 RL_Pricing_Comparison.csv  # Comparison of RL vs. static pricing  
-│── 📜 PED_Results.csv  # Price Elasticity of Demand data  
-│── 📜 q_table.npy  # Trained Q-table  
-│── 📜 main.ipynb  # Jupyter notebook for training the RL model  
-│── 📜 evaluation.ipynb  # Notebook for analyzing and visualizing results  
-│── 📜 README.md  # This file  
-```
+📈 Visualizations track reward convergence, PED alignment, and exploration strategies.
 
 ---
 
-## ⚡ **How to Run This Project**  
+## 🧪 Experimental Results
 
-### **1️⃣ Clone the Repository**  
-```sh
-git clone https://github.com/yourusername/dynamic-pricing-rl.git
+| Item Type | Old Price | New Price (RL) | Revenue Change | Profit Margin Change |
+|-----------|-----------|----------------|----------------|-----------------------|
+| Dairy     | ₹50       | ₹55            | +8.5%          | +6.3%                |
+| Snacks    | ₹30       | ₹27            | -3.2%          | +1.5%                |
+| Beverages | ₹20       | ₹22            | +5.1%          | +4.8%                |
+
+---
+
+## 📊 Comparison: Q-Learning vs DQN
+
+| Criteria | Q-Learning | DQN |
+|----------|------------|-----|
+| Interpretability | ✅ High | ⚠️ Lower |
+| Scalability | ❌ Low | ✅ High |
+| Revenue Improvement | Moderate | High |
+| Training Time | Fast | Slower |
+| Use Case Suitability | Small to Mid-Size | Large-scale environments |
+
+📌 *DQN emerges as the better approach for complex, high-dimensional pricing scenarios.*
+
+---
+
+## 📁 Project Structure
+
+📂 dynamic-pricing-rl
+├── main.ipynb # Q-Learning implementation
+├── dqn_model.ipynb # DQN agent implementation
+├── evaluation.ipynb # Result analysis & visualization
+├── RL_Pricing_Comparison.csv # Q-Learning vs. Static Pricing
+├── PED_Results.csv # PED values by item
+├── q_table.npy # Trained Q-table
+├── model_weights.h5 # DQN model weights
+└── README.md # Project overview (this file)
+
+## ⚡ How to Run
+
+### 1️⃣ Setup
+
+bash
+git clone https://github.com/jasrajshendge/dynamic-pricing-rl.git
 cd dynamic-pricing-rl
-```
+pip install -r requirements.txt
 
-### **2️⃣ Install Dependencies**  
-```sh
-pip install numpy pandas matplotlib seaborn gym
-```
+2️⃣ Run Q-Learning Agent
+bash
+Copy
+Edit
+jupyter notebook main.ipynb
+3️⃣ Run DQN Agent
+bash
+Copy
+Edit
+jupyter notebook dqn_model.ipynb
 
-### **3️⃣ Train the RL Model**  
-```sh
-python main.py
-```
+### Conclusion
+This project proves the effectiveness of Reinforcement Learning in dynamic pricing when fused with Price Elasticity of Demand. The Q-Learning model offered strong baseline performance, while the DQN agent outperformed in real-world scalability and revenue lift. Together, these models showcase a powerful approach to automated, demand-sensitive pricing in the e-commerce domain.
 
-### **4️⃣ Evaluate Results**  
-```sh
-python evaluation.py
-```
+🔮 Future Scope
+Integrate competitor pricing and seasonal trends
 
----
+Use Multi-Agent Reinforcement Learning (MARL) for multi-brand scenarios
 
-## 👨‍💻 **Connect with Me**  
+Develop a real-time pricing engine for deployment
 
-📧 **Email:** jasraj.shendge@example.com  
-🌐 **LinkedIn:** [Jasraj Shendge](https://www.linkedin.com/in/jasrajshendge/)  
-📂 **GitHub:** [jasrajshendge](https://github.com/jasrajshendge)  
+Explore hierarchical RL for region-based or product-cluster pricing
 
----
+📬 Connect with Me
+👨‍💻 Jasraj Shendge
+📧 jasraj.shendge@example.com
+🔗 LinkedIn
+📂 GitHub
 
-Let me know if you need further modifications! 🚀🔥
+vbnet
+Copy
+Edit
+
+Let me know if you'd like a `.pdf` version or need help designing a GitHub repo banner or README visu
