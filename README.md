@@ -152,8 +152,4 @@ Explore hierarchical RL for region-based or product-cluster pricing
 🔗 LinkedIn
 📂 GitHub
 
-vbnet
-Copy
-Edit
 
-Let me know if you'd like a `.pdf` version or need help designing a GitHub repo banner or README visu
